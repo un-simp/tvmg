@@ -1,0 +1,271 @@
+/*TVMG PAGE*/
+
+:root {
+    --bg:       #1c1c1c;
+    --gray-box: #252525;
+    --text:     #d8d8d8;
+    --text-dim: #888;
+    --accent:   #a855f7;
+    --accent2:  #fffff;
+    --border:   #333;
+    --hero-h:   600px;
+
+    --ff-head: 'Barlow Condensed', sans-serif;
+    --ff-body: 'Barlow', sans-serif;
+}
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--ff-body);
+    font-size: 16px;
+    line-height: 1.75;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { color: #fff; font-weight: 500; }
+
+/* BANNER */
+.hero {
+    position: relative;
+    height: var(--hero-h);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-bg-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5) saturate(1.2) blur(8px);
+    transform: scale(1.04); /* add this too, prevents blurry edges */
+}
+
+.hero-text { position: relative; z-index: 1; }
+.hero-text h1 {
+    font-family: var(--ff-head);
+    font-style: italic;
+    font-weight: 900;
+    font-size: clamp(80px, 16vw, 160px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-shadow:
+            4px 4px 0 rgba(168, 85, 247, 0.4),
+            0 0 80px rgba(168, 85, 247, 0.6);
+}
+.hero-sub {
+    font-family: var(--ff-head);
+    font-weight: 400;
+    font-size: clamp(14px, 2.2vw, 20px);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 12px;
+}
+
+/* ABOUT BOX */
+.about-band {
+    background: var(--gray-box);
+    padding: 56px 28px;
+}
+
+/* MIDDLE */
+body { overflow-x: hidden; }
+
+.mid-bg {
+    position: relative;
+}
+
+.mid-bg::after {
+    content: '';
+    position: fixed;
+    inset: -5%;
+    width: 110%; height: 110%;
+    background-image: url("media/return to the spectrum poster.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.35);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.mid-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(
+            ellipse 70% 100% at 50% 50%,
+            rgba(0,0,0,0.55) 0%,
+            rgba(0,0,0,0.85) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* CONTACT */
+.contact-band {
+    background: var(--bg);
+    padding: 0 28px;
+    border-top: 1px solid var(--border);
+}
+
+/* FORGOT THIS */
+.band-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+/* CONTENT BOX */
+.content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 28px 64px;
+    position: relative;
+    z-index: 1;
+}
+
+/* SECTIONS */
+section { padding: 48px 0; }
+section:first-child { padding-top: 0; }
+
+h2 {
+    font-family: var(--ff-head);
+    font-weight: 700;
+    font-size: clamp(22px, 3vw, 28px);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+p { color: var(--text); margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 0;
+}
+
+/* LINKS */
+.link-arrow, .plain-link { color: var(--accent); font-weight: 500; }
+
+.plain-link-accounts {
+    color: var(--accent2);
+    font-weight: 500;
+}
+
+/* TEAM BLOCK */
+.team-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.team-logo { width: 44px; color: var(--text-dim); flex-shrink: 0; }
+.team-logo svg { display: block; width: 100%; }
+
+.team-name {
+    font-family: var(--ff-head);
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* MEMBER LIST */
+.member-list {
+    list-style: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.member-list li {
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 25px;
+    color: var(--text);
+}
+
+.member-list li strong { color: #fff; }
+
+/* MAPS */
+.map-block {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+}
+
+.map-block:last-of-type { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+.map-block h3 {
+    font-family: var(--ff-head);
+    font-style: italic;
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.map-block p { margin-bottom: 4px; color: var(--text-dim); font-size: 18px; }
+
+.bigger-font {
+    font-size: 20px;
+}
+.map-tags {
+    font-size: 18px !important;
+    letter-spacing: 0.06em;
+    color: var(--accent) !important;
+    text-transform: uppercase;
+}
+
+/* EVENTS BUTTON */
+.btn-plain {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--ff-head);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-plain:hover {
+    background: #c084fc;
+    box-shadow: 0 0 24px rgba(168,85,247,0.45);
+    text-decoration: none;
+}
+
+/* CONTACT LINKS */
+.links-list { list-style: none; border-top: 1px solid var(--border); }
+.links-list li { border-bottom: 1px solid var(--border); padding: 11px 0; }
+.links-list a { color: var(--text); font-size: 15px; transition: color 0.15s; }
+.links-list a:hover { color: var(--accent); text-decoration: none; }
+
+/* FOOTER */
+.site-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+}
+
+/* RESPONSIVE SHI */
+@media (max-width: 480px) {
+    .hero { height: 300px; }
+    .about-band, .contact-band { padding-left: 20px; padding-right: 20px; }
+    .content { padding-left: 20px; padding-right: 20px; }
+}
