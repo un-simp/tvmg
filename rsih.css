@@ -272,3 +272,25 @@ hr { border: none; border-top: 1px solid var(--border); margin: 0; }
     .content { padding: 40px 20px 60px; }
     .results-table td:first-child { width: 110px; }
 }
+
+#music-btn {
+    position: fixed;
+    bottom: 20px; right: 24px;
+    z-index: 100;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.5);
+    font-family: var(--ff-head);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    padding: 7px 16px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: color 0.2s;
+}
+#music-btn:hover { color: #fff; }
+
+.plain-link-accounts {
+    color: var(--accent2);
+    font-weight: 500;
+}

@@ -14,6 +14,30 @@
 <!-- BANNER (I TOOK IT FROM ANOTHER WEBSITE IDK WHY ITS HERO) -->
 <header class="hero">
     <video class="hero-bg-video" src="media/trailer.webm" autoplay muted loop playsinline></video>
+    <button id="music-btn" onclick="toggleMusic()">♪ Music</button>
+
+    <audio id="bg-music" src="media/RSIH%20BGM.mp3" loop></audio>
+
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-btn');
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '♪ Music';
+            } else {
+                audio.pause();
+                btn.textContent = '♪ Muted';
+            }
+        }
+
+        // Try to autoplay — will only work if browser allows it
+        audio.play().catch(() => {
+            // Autoplay blocked, wait for first click anywhere
+            document.addEventListener('click', () => audio.play(), { once: true });
+        });
+    </script>
     <div class="hero-text">
         <h1>TVMG</h1>
         <p class="hero-sub">Beat Saber Mapping &amp; More</p>
@@ -32,6 +56,7 @@
 
 <!-- MIDDLE THING -->
 <div class="mid-bg">
+
     <main class="content">
 
         <section id="members">

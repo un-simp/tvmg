@@ -16,6 +16,31 @@
 <!-- HERO -->
 <header class="hero">
     <video class="hero-bg-video" src="media/trailer.webm" autoplay muted loop playsinline></video>
+    <button id="music-btn" onclick="toggleMusic()">♪ Music</button>
+
+    <audio id="bg-music" src="media/RSIH%20BGM.mp3" loop></audio>
+
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-btn');
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '♪ Music';
+            } else {
+                audio.pause();
+                btn.textContent = '♪ Muted';
+            }
+        }
+
+        // Try to autoplay — will only work if browser allows it
+        audio.play().catch(() => {
+            // Autoplay blocked, wait for first click anywhere
+            document.addEventListener('click', () => audio.play(), { once: true });
+        });
+    </script>
+
     <div class="hero-text">
         <p class="hero-eyebrow">TVMG Presents</p>
         <h1>RSIH</h1>
@@ -67,11 +92,11 @@
                 <tbody>
                 <tr>
                     <td>Experienced</td>
-                    <td><strong>The_MJ</strong></td>
+                    <td><strong><a href="https://beatleader.com/u/76561198158199188/ranked" class="plain-link-accounts">The_MJ</a></strong></td>
                 </tr>
                 <tr>
                     <td>Casual</td>
-                    <td><strong>王者の舞踏</strong></td>
+                    <td><strong><a href="https://beatleader.com/u/76561198158362613/ranked" class="plain-link-accounts">王者の舞踏</a></strong></td>
                 </tr>
                 </tbody>
             </table>
@@ -89,11 +114,11 @@
                 <tbody>
                 <tr>
                     <td>Experienced</td>
-                    <td><strong>TinyPawb</strong></td>
+                    <td><strong><a href="https://beatleader.com/u/tinypawb/ranked" class="plain-link-accounts">TinyPawb</a></strong></td>
                 </tr>
                 <tr>
                     <td>Casual</td>
-                    <td><strong>PanaDoge</strong></td>
+                    <td><strong><a href="https://beatleader.com/u/panadoge/ranked" class="plain-link-accounts">PanaDoge</a></strong></td>
                 </tr>
                 </tbody>
             </table>
